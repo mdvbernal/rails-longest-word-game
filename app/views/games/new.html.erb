@@ -1,0 +1,17 @@
+<h1>Games#new</h1>
+<p>Find me in app/views/games/new.html.erb</p>
+
+<h1>******** Welcome to the longest word-game !********</h1>
+<h2>Here is your grid :</h2>
+<%= @grid %>
+<h2>What's your best shot ?</h2>
+
+<form action="/score">
+  <label for="question">best shot ?</label>
+  <input type="text" id="question" name="input" placeholder="write text here">
+  <%= hidden_field_tag :grid, @grid %>
+  <input type="hidden" name="grid" value="<%= @grid %>">
+<!--   <input type="text" id="question" name="input" placeholder="write text here"> -->
+  <input type="hidden" name="start_time" value="<%= @start_time %>">
+  <input type="submit" value="Go on!">
+</form>
